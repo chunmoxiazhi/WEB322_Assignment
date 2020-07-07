@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="style.css" /> <!-- STYLE-->
+
+<div class = 'listingHero'>
+    <img class = "commonHero" src="hero.jpg" alt="Common Hero">
+    
+    <h1>Popular meal packages available...</h3>
+</div>
+
+<div id='listingContent'>
+      {{#each listingFood}}
+        <div class="listingFood_grid">
+            <img class = "packages" src= {{this.image}} alt="Meal Pic"><br>
+            <h2>{{this.name}}</h2>
+            <h3>Category: {{this.category}}</h3>
+            <p>{{this.description}} <br>
+            Number of Meals: {{this.number_meals}}<br>
+            Top Meal?
+             </p>
+             <div id = 'top'> 
+                 {{#if this.top}}
+                 <img  src="true.png" alt="True">
+                 {{else}}
+                 <img src="false.png" alt="False">
+                 {{/if}}
+             </div>
+            <h3>{{this.price}}</h3>
+        </div>
+    {{/each}}
+</div>

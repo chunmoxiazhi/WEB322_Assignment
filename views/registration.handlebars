@@ -1,0 +1,34 @@
+    
+    <link rel="stylesheet" href="style.css" /> <!-- STYLE-->
+    
+    
+    
+    
+    <div class = 'listingHero'>
+        <img class = "commonHero" src="hero.jpg" alt="Common Hero">
+        <h2>New to Shilee's Food Truck?</h4>
+        <h1>Register your account here!</h3><br /><br />
+    </div>
+    {{#each errorMessage}}
+        <div class="warning">Warning: {{this}}</div>
+    {{/each}}
+    <div class= 'registration'>
+
+
+
+          <form  method="POST" action ="/registration">
+
+             <label for="firstName">First Name:</label>
+             <input type="text" name="first" required><br /><br />
+             <label for="lastName">Last Name:</label>
+             <input type="text" name="last" required><br /><br />
+             <label for="eMail">Email</label>
+             <input type="text" name="email" required><br /><br />
+             <label for="password">Password:</label>
+             <input type="password" name="password" minlength="8" required><br /><br />
+             <label for="confirmPassword">Confirm Password:</label>
+             <input type="password" name="confirmPassword" minlength="8" required><br /><br />
+             <div class = "submission"><input type="submit" value="Register Account"></div><br />
+
+        </form>
+    </div>

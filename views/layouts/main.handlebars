@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" contents="width=device-width, initial-scalre=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="style.css" /> <!-- STYLE-->
+</head>
+
+<body>
+  <div id = "header">
+    
+      <img id = "logo" src="logo.png" alt="Logo">
+    
+    <div id = "webName">
+      <h1>Shilee's Food Truck</h1>
+    </div>
+  </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/foodListing">Meal Packages</a>
+
+        </li>
+        <li>
+          <a href="/registration">Registration</a>
+        
+        </li>
+        <li><a href="/login">Login</a></li>
+      </ul>
+    </nav>
+
+  <main>
+      {{{body}}}
+  </main>
+<footer>
+  <div class = 'footer_menu' id = "media">
+    <h1>Follow us!</h1>
+    <div class = 'socialmedia'>
+      <a href="https://www.facebook.com/" >
+      
+      <img  src="facebook.jpg" alt="Facebook">
+    
+      </a>
+       <a href="https://www.instagram.com/" >
+      
+        <img src="instagram.jpg" alt="Instagram">
+      
+      </a>
+    </div>
+    </div>
+
+  </div>
+    <div class= 'footer_menu' id = "menu">
+        <h1>Our Menu</h1>
+        <p>
+           <a href="/foodListing"> Individual Meals</a>
+           <br>
+           <a href="/foodListing"> Meal Packages </a>
+           
+            <ul>
+                <li>
+                    <a href="/foodListing">Weight Control</a>
+                </li>
+                  <li>
+                    <a href="/foodListing">Muscle Enhancement</a>
+                </li>
+                
+            </ul>
+        </p>
+    </div>
+    <div class= 'footer_menu' id = "newsletter">
+        <h1>Sign up for our latest newsletter</h1>
+          <form action="/" method="POST">
+             <label for="name">Name: </label>
+             <input type="text" name="first" required><br /><br />
+             <label for="eMail">Email: </label>
+             <input type="text" name="email" required><br />
+             <div id = "footerButtom" class = "submission"><input type="submit" value="Join Us"></div>
+
+        </form>
+    </div>
+    
+</footer>
+</body>
+</html>
