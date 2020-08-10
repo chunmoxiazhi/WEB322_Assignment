@@ -18,15 +18,19 @@ footer form label{
   display:flex;
   margin: 0;
   padding: 0;
-  background-image: url("mainHeader.png");
+  background-image: url("/img/mainHeader.png");
 }
 
 #webName{
+  padding-top:5%;
   padding-left: 4%;
   font-weight: bold;
   font-family:  'Oswald', sans-serif;
   font-size: 50px;
   margin-right: auto;
+}
+#webName h1{
+  font-size: 80px;
 }
 
 #logo{
@@ -50,7 +54,7 @@ nav ul {
 }
 
 nav ul li {
-  width: 23%;
+  width: 19%;
   font-family:  'Oswald', sans-serif;
   display:inline-block;
   font-weight: bold;
@@ -258,6 +262,7 @@ footer form input[type = "submit"]{
   background-color: #ffecc7;
   padding-left: 20%;
   padding-right: 20%;
+  padding-bottom: 5%;
 }
 .login form{
   text-align: center;
@@ -391,7 +396,7 @@ width: 100%;
   }
   
   #webName{
-    font-size: 100%;
+    font-size: 50px;
     margin-right: auto;
   }
   #homeHero{
@@ -498,7 +503,60 @@ width: 100%;
     font-size: 20px;
   }
 }
+/*****************************************************************************Shopping Cart********************************************************************************/
+.placeOrder{
+  padding-bottom: 5%;
+  margin-bottom: 0;
+}
+#emptyCart{
+  margin: 0;
+  padding-bottom: 6%;
+}
+#list img{
+  height: 45%;
+  width: 45%
+}
 
+.mealModify{
+  padding-left: 25%;
+}
+/*****************************************************************************PRODUCT DETAIL********************************************************************************/
+.productDetail{
+  font-size: 20px;
+  font-weight: bold;
+  font-family:  'Oswald', sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0%;
+  background-color: #ffecc7;
+  padding-left: 20%;
+  padding-right: 20%;
+
+  
+}
+.column1{
+  width: 100%;
+  display: inline-flex;
+
+}
+.productImage{
+  margin: 5%;
+  height: 80%;
+}
+.col-md-12{
+  margin-top: 5%;
+  width: 100%;
+}
+.shopping{
+  float: right;
+}
+.mealForm{
+  margin: 0;
+}
+.link{
+  font-weight: bold;
+  font-size: 5%;
+}
 /*****************************************************************************MOBILE********************************************************************************/
 @media only screen and (max-width: 480px) { /*MOBILE PORTRAIT*/
   #header{
@@ -517,11 +575,14 @@ width: 100%;
     width: 25%;
 }
 #webName{
-  font-size: 100%;
+  padding-top:5%;
+  
   margin-right: auto;
-  text-align: center;
+  text-align: center; 
+
 }
 #webName h1{
+  font-size: 25px;
   margin-bottom: 0;
 }
 #homeHero{

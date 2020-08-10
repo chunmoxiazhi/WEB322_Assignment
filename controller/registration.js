@@ -1,19 +1,16 @@
 const express = require('express');
+const data = require("./data.js");
+
 const router = express.Router();
 
 const homeContent = require("../model/homeContent.js");
 const listingFood = require("../model/listingFood.js");
 
 //Registration
-router.get("/", (req,res)=>{
-    // Set title
-    res.render("registration",{
-        title: "Registration"
-    });
 
 
-});
-router.post("/", (req,res)=>{
+
+/*router.post("/", (req,res)=>{
    // console.log(`${req.body.first}`); //print out the text user entered. 
     const{first, last, email, password, confirmPassword} = req.body;
     const errors = [];
@@ -65,6 +62,6 @@ router.post("/", (req,res)=>{
        
     }
 
-})
+})*/
 
 module.exports = router;

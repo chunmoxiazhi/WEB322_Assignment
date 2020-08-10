@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+      
+        <!-- it is common to place the .js files at the end of the <body> tag as well -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            function makeAJAXRequest(method, url, data){
+                if(data){ // Make an AJAX call using the provided data & method
+                    console.log("Adding: "+data.name);
+                    fetch(url, { 
+                        method: method,
+                        body: JSON.stringify(data),
+                        headers: { 'Content-Type': 'application/json'} 
+                    })
+                    .then(response =>{
+                        return response.json();
+                    })
+                    .then(json => {//responds with number of items in cart 
+                        //changes the number beside the cart
+                        console.log(json);
+                        $("span.glyphicon").text(`${json.qty}`);
+                    }).catch((err)=>{
+                        console.log("Error Fetching");
+                        console.log(err);
+                        alert(err.message);
+                    }); 
+
+                }else{  // Make an AJAX call without providing data using the method
+                    fetch(url, { method: method })
+                    .then(response => response.json())
+                    .then(json => {
+                        console.log(json);   
+                    }).catch((message)=>{
+                        alert(message);
+                    });
+                }
+            }
+            //makes ajax call to add a certain item by name to cart
+            function addToCart(data){
+                console.log("Calling add with: "+data);
+                 makeAJAXRequest("POST", "/addProduct", {name: data});
+            }
+
+        </script>    
+
+    </head>
+
+<div class = "productDetail">
+
+<div class = "column1">
+    <div class="productImage">
+        <img class="img-fluid" src="/img/{{data.image}}" alt="{{data.name}}">
+    </div>
+    <div class="col-md-12" class = "productInfo">
+        <div class="pName">
+                <h2>{{data.name}}</h2>
+        </div>
+<br>
+        <div class="pPrice">
+                <h3>Price: ${{data.price}}</h3>
+        </div>
+
+        <div class="pPrice">
+                <h3>Number of Meals: {{data.number_meals}}</h3>
+        </div>
+
+<br>
+
+        <div class="pDescription">
+                <h4>Description: {{data.description}}</h4>
+        </div>
+        <br><br>
+        <form action="/action_page.php">
+            <input type="number" id="qty" name="qty" value = "1"><br><br>
+            {{!-- <input type="button" value="Submit"> --}}
+            <input  type="button" onclick='addToCart("{{data.name}}")' value ="Add to Cart">
+        </form>
+        <div class="addCart">
+                <!-- Creates add to cart button -->
+                
+        </div>
+
+    </div>
+
+</div>
+        
+            
+            
+ 
+     
+       
+        </div>
+</div>
+      
+
+</html>

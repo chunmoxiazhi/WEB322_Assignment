@@ -1,24 +1,24 @@
     
-    <link rel="stylesheet" href="style.css" /> <!-- STYLE-->
-    
-    
-    
-    
     <div class = 'listingHero'>
-        <img class = "commonHero" src="hero.jpg" alt="Common Hero">
+        <img class = "commonHero" src="/img/hero.jpg" alt="Common Hero">
         <h2>We missed you!</h4>
         <h1>Login your account here:</h3><br /><br />
     </div>
-    {{#each errorMessage}}
-        <div class="warning">Warning: {{this}}</div>
-    {{/each}}
+    {{#if errorMessage.message}}
+                <div class="warning" role="alert"> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <strong>Error:</strong> {{errorMessage.message}} 
+                </div>
+    {{/if}}
     <div class= 'login'>
           <form action="/login" method="POST">
 
              <label>Email</label>
-             <input type="text" name="email" required><br /><br />
+             <input type="text" name="email"><br /><br />
              <label>Password:</label>
-             <input type="password" name="password" minlength="8" required><br /><br />
+             <input type="password" name="password"><br /><br />
             <div class = "submission"><input  type="submit" value="Sign In"><br /></div> 
              <a href="/"> Forget your password?</a><br />
         </form>

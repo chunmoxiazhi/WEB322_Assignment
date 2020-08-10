@@ -1,41 +1,46 @@
+
 const express = require('express');
+const data = require("./data.js");
+
 const router = express.Router();
 
 const homeContent = require("../model/homeContent.js");
 const listingFood = require("../model/listingFood.js");
 
+
 //Login
-router.get("/", (req,res)=>{
-    // Set title
-    res.render("login",{
-        title: "Login"
-    });
-    //
 
-});
-router.post("/", (req,res)=>{
-    console.log(`${req.body.first}`); //print out the text user entered. 
 
-    const errors = [];
-    if (req.body.email == ""){
-        errors.push ("Please enter your eMail address.");
-    }
-    if (req.body.password == ""){
-        errors.push ("Please enter your password.");
-    }
 
-    if (errors.length > 0){
-        res.render("login",{
-            title: "Login",
-            errorMessage:errors
-        });
-    }
-    else{
-        res.redirect("/");
-    }
 
-})
 
+// router.get("/user", (req, res)=>{
+//     //if (req.query.email){
+//         data.getEmail(req.query.email).then((info)=>{
+//           res.render("user",{user: (info.length!=0)?info:undefined});
+//         }).catch((err)=>{
+//           res.render("students"); //add an error message or something
+//           console.log("Invalid User info");
+//         });
+    //  }
+    //   else{
+    //   db.getStudents().then((data)=>{
+    //     res.render("students",{students: (data.length!=0)?data:undefined});
+    //   }).catch((err)=>{
+    //     res.render("students"); //add an error message or something
+    //   });
+    //   }
+
+//});
+
+// function ensureLogin(req, res, next) {
+//     if (!req.session.user) {
+//       res.redirect("/login");
+//     } 
+//     else {
+//       next();
+//     }
+//   }
 
 
 module.exports = router;

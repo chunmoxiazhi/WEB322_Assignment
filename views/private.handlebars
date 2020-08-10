@@ -1,0 +1,30 @@
+<div class = 'listingHero'>
+    <img class = "commonHero" src="/img/hero.jpg" alt="Common Hero">
+
+    <div>
+        
+        
+        {{#if userInfo.clerk}}
+        <div class = "content">
+            <h2>Clerk Name:  {{userInfo.first}} {{userInfo.last}}</h2> <br>
+            <button  type="button" onclick="location.href='/addMeal'">Add Meal Package</button>
+            <button  type="button" onclick="location.href='/viewMeal'">View and Edit Packages</button>
+        </div>
+        
+ 
+        {{else}}
+        <div class = "content">
+            <h2>Welcome Back  {{userInfo.first}} {{userInfo.last}}</h2> <br>
+            <button  type="button" onclick="location.href='/cart'">View Shopping Cart</button>
+        </div>
+        
+        {{/if}}
+    </div>
+    <br>
+
+        <a href="/logout">Log Out</a>
+        <br>
+    </div>
+</div>
+    
+   

@@ -1,9 +1,5 @@
-
-    <link rel="stylesheet" href="style.css" /> <!-- STYLE-->
-
-
 <section id = 'homeHero'>
-    <img src="foodDelivery.jpg" alt="Hero Section IMG" >
+    <img src="/img/foodDelivery.jpg" alt="Hero Section IMG" >
 
     <h1>Forget About Cooking and Cleaning, Enjoy Your Meal!</h1>
 </section>
@@ -11,7 +7,7 @@
     <div id = "contents">
         {{#each homeContent}}
             <div class="content_grid">
-                <img src= {{this.image}} alt="Content Pic"><br>
+                <img src="/img/{{this.image}}" alt="Content Pic"><br>
                 <h2>{{this.name}}</h2>
                 <h3>{{this.description}}</h3>
             </div>
@@ -27,7 +23,7 @@
     </h2>
     {{#each homeFood}}
     <div class = 'homeFood_grid'>
-        <img src= {{this.image}} alt="Meal Pic"><br>
+        <img src="/img/{{this.image}}" alt="Meal Pic"><br>
         <h2>
             {{this.name}}
         </h2>
